@@ -102,14 +102,90 @@
 		    //localStorage.removeItem('visit_data%3'); //訪問の有無を記憶させるローカルストレージをクリアする
 		    //エリア番号をJSONデータに変化し、ローカルストレージに書き込み　キーは「area_no%」
 		    let json_areano=JSON.stringify(markerList[0].areaid);
+			let area_no=markerList[0].areaid;
 		    localStorage.setItem('area_no%',json_areano);	  
 		    //配列markerListをJSONデータに変換し、json_stringという変数に一括代入し、 ローカルストレージに書き込みキーは「all_basic_data」
 		    let json_string=JSON.stringify(markerList);
 		    let key_all='all_basic_data%' + markerList[0].areaid;
 		    localStorage.setItem(key_all,json_string);
-		    //「visit_data」というキーでローカルストレージにデータが保存されているか否かを確認する。
-		    var flag=-1
+		    //「kiyaku_data%x」というキーでローカルストレージにデータが保存されているか否かを確認する。
+		    var flag_kiyaku=-1
+		    key_kiyaku="kiyaku_data%" +area_no;
+		    for (key in localStorage) {
+					if (localStorage.hasOwnProperty(key)) {
+				    if(key==key_kiaku){
+			      	flag_kiyaku=1
+				  	}
+					}
+		    }
+			if(flag_kiyaku=-1){
+					    //「visit_data」というキーでローカルストレージにデータが保存されているか否かを確認する。
+		   
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+ var flag=-1
 		    key_visit="visit_data%" + markerList[0].areaid;
+		    for (key in localStorage) {
+					if (localStorage.hasOwnProperty(key)) {
+				    if(key==key_visit){
+			      	flag=1
+				  	}
+					}
+		    }
+			}
+			//「visit_data」というキーでローカルストレージにデータが保存されているか否かを確認する。
+		    var flag=-1
+		    key_visit="visit_data%" + area_no;
 		    for (key in localStorage) {
 					if (localStorage.hasOwnProperty(key)) {
 				    if(key==key_visit){
@@ -119,22 +195,6 @@
 		    }
 		    //「visit_data」というキーでローカルストレージが使われている場合は何もしない。使われていない場合は、すべてのスポットを未訪問として、各スポットへの訪問を無（初期設定）としてJSONデータに変換し、vist_ysという配列に格納する。
 		    if (flag<0){
-					//規約を読んでいるか否かをチェック
-					key_kiyaku="kiyaku_data%" + + markerList[0].areaid;
-					var flag_kiyaku=-1
-					for (key in localStorage) {
-						if (localStorage.hasOwnProperty(key)) {
-							if(key==key_kiyaku){
-								flag_kiyaku=1
-							}
-						}
-					}
-					//規約を読んでいない場合は、利用規約のページに遷移する
-					if(flag_kiyaku<0){
-							location.href="kiyaku.html"
-					}
-					let json_kiyaku=localStorage.getItem(key_kiyaku)
-					if(kiyaku)
 		      visit_yn=[]; //配列の初期化
 		      for(i=0; i < markerList.length; i++){
 			  		visit_yn[i]=-1;
@@ -259,4 +319,5 @@
  </script>
   </body>
 </html>
+
 
