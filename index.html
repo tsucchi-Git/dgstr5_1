@@ -120,7 +120,7 @@
 		    //「visit_data」というキーでローカルストレージが使われている場合は何もしない。使われていない場合は、すべてのスポットを未訪問として、各スポットへの訪問を無（初期設定）としてJSONデータに変換し、vist_ysという配列に格納する。
 		    if (flag<0){
 					//規約を読んでいるか否かをチェック
-					key_kiyaku="kiyaku_data%" + area_no;
+					key_kiyaku="kiyaku_data%" + + markerList[0].areaid;
 					var flag_kiyaku=-1
 					for (key in localStorage) {
 						if (localStorage.hasOwnProperty(key)) {
@@ -259,3 +259,4 @@
  </script>
   </body>
 </html>
+
