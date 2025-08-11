@@ -271,21 +271,11 @@
                         //エリア番号の読み取り
                         let area_no=localStorage.getItem('area_no%');
                         //alert(area_no);
-            		    //現在の訪問記録の読み込み
-                         let key_visit='visit_data%' + area_no;
-                         //alert(key_visit);
-                         //let json_visit=localStorage.getItem(key_visit);
-                         //visit_yn_temp=JSON.parse(json_visit);
-                         //alert(visit_yn_temp.length);
-                         //「visit_data」というキーでローカルストレージが使われている場合は何もしない。使われていない場合は、すべてのスポットを未訪問として、各スポットへの訪問を無（初期設定）としてJSONデータに変換し、vist_ysという配列に格納する。
-            		    //  let visit_yn=[];
-                    //      for(i=0; i < visit_yn_temp.length; i++){
-            			  //  visit_yn[i]=-1;
-            		    //   }
-            		      //ローカルストレージに書き込み
-            		      // let json_string_visit=JSON.stringify(visit_yn); 
-            		      // localStorage.setItem(key_visit,json_string_visit);
+            		    //訪問記録と利用規約同意のリセット
+                        let key_visit='visit_data%' + area_no;
+                        let key_kiyaku='kiyaku_data%' + area_no;
                         localStorage.removeItem(key_visit);
+                        localStorage.removeItem(key_kiyaku);
             		  }
                         //ローカルストレージ訪問記録のクリア
                         //localStorage.removeItem('visit_data%'+area_no);
@@ -316,4 +306,5 @@
     // }); 
 </script>
 </html>
+
 
