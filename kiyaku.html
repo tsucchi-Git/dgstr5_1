@@ -128,7 +128,7 @@
             //ローカルストレージに書き込み
             key_kiyaku="kiyaku_data%" + area_no;
             let kiyaku_yn=1;
-            let json_string_=JSON.stringify(kiyaku_yn); 
+            let json_string=JSON.stringify(kiyaku_yn); 
             localStorage.setItem(key_kiyaku,json_string);
             alert(key_kiyaku);
             location.href='index.html'
@@ -145,6 +145,7 @@
 </script>
 
 </html>
+
 
 
 
