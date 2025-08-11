@@ -108,7 +108,6 @@
   <div><input id="mybutton" type="button" value="ホームへ" onclick="clickBtn()" ></div>
 </body>
 <script>
-    var key_kiyaku;
     if(window.localStorage){
       //エリア番号の読み取り
       area_no=localStorage.getItem('area_no%');
@@ -127,20 +126,12 @@
       alert(flag);
       const checkbox=document.getElementById('mycheckbox')
       if(flag==-1){
-        // checkbox.addEventListener('change', () => {
-        //   if (checkbox.checked) {
-        //     document.getElementById("mybutton").style.disabled = false;
-        //     alert('チェック有り');
-        //   } else {
-        //     document.getElementById("mybutton").style.disabled = true;
-        //     alert('チェックなし');
-        //   }
-        // });
         function clickBtn() {
           if (checkbox.checked) {
             alert('ホーム画面に戻ります');
             //ローカルストレージに書き込み
-            let kiyaku_ys=1;
+            key_kiyaku="kiyaku_data%" + area_no;
+            let kiyaku_yn=1;
             let json_string_=JSON.stringify(kiyaku_yn); 
             alert(key_kiyaku);
             localStorage.setItem(key_kiyaku,json_string);
@@ -148,7 +139,6 @@
           }else{
             alert('「利用規約に同意するにチェックが入っていません」');
           }
-
         }
       }else{
         alert("承諾");
@@ -157,4 +147,5 @@
       }
     }
 </script>
+
 </html>
