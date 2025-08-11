@@ -112,16 +112,12 @@
       //エリア番号の読み取り
       area_no=localStorage.getItem('area_no%');
       alert(area_no);
-      //規約を読み込んだか否かをチェック
-      var flag=-1
+      //規約をすでに同意したか否かをチェック
       key_kiyaku="kiyaku_data%" + area_no;
-      for (key in localStorage) {
-        if (localStorage.hasOwnProperty(key)) {
-            if(key==key_kiyaku){
-              flag=1;
-              breake;
-            }
-        }
+      if(localStorage.getItem(key_kiyaku)>0){
+        flag=1;
+      }else{
+        flag=-1
       }
       alert(flag);
       const checkbox=document.getElementById('mycheckbox')
@@ -149,5 +145,6 @@
 </script>
 
 </html>
+
 
 
