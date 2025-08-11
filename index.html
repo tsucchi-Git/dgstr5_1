@@ -113,13 +113,13 @@
 		    key_kiyaku="kiyaku_data%" +area_no;
 		    for (key in localStorage) {
 					if (localStorage.hasOwnProperty(key)) {
-				    if(key==key_kiaku){
+				    if(key==key_kiyaku){
 			      	flag_kiyaku=1
 				  	}
 					}
 		    }
 			//規約に同意していまい場合は、利用規約のページに遷移する。
-			if(flag_kiyaku=-1){
+			if(flag_kiyaku==-1){
 				location.href='kiyaku.html';
 			}
 			//「visit_data」というキーでローカルストレージにデータが保存されているか否かを確認する。
@@ -258,6 +258,7 @@
  </script>
   </body>
 </html>
+
 
 
 
