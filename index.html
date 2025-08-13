@@ -109,12 +109,12 @@
 		    let key_all='all_basic_data%' + markerList[0].areaid;
 		    localStorage.setItem(key_all,json_string);
 			//「visit_data」というキーでローカルストレージにデータが保存されているか否かを確認する。
-		    var flag=-1
+		    var flag=-1;
 		    key_visit="visit_data%" + area_no;
 		    for (key in localStorage) {
 					if (localStorage.hasOwnProperty(key)) {
 				    if(key==key_visit){
-			      	flag=1
+			      	flag=1;
 				  	}
 					}
 		    }
@@ -167,12 +167,14 @@
 		      easymap.setView(curpoint);
 		  }).addTo(mymap);
 		  //「kiyaku_data%x」というキーでローカルストレージにデータが保存されているか否かを確認する。
-		    var flag_kiyaku=-1
+		    var flag_kiyaku=-1;
 		    key_kiyaku="kiyaku_data%" +area_no;
+				  alert(key_kiyaku);
 		    for (key in localStorage) {
 					if (localStorage.hasOwnProperty(key)) {
+						alert(key);
 				    if(key==key_kiyaku){
-			      	flag_kiyaku=1
+			      	flag_kiyaku=1;
 					//break;
 				  	}
 					}
@@ -259,6 +261,7 @@
  </script>
   </body>
 </html>
+
 
 
 
