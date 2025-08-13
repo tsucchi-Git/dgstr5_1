@@ -43,6 +43,7 @@
         var explain=document.getElementById("title-explain");
         explain.textContent="グリーンリーフの枝先の矢印は、災害伝承碑などの場所を表しています。訪問・チェックインするとオレンジ色に変わります。いずれかをタップすると、災害伝承碑などの写真、名称、住所とともに、現在の場所からの距離が表示されます。一定の距離まで近づくと、チェックイン可能になりデジタルスタンプがゲットできます。ぜひ訪問してみてください。";
            explain.style.fontSize="8pt";       //フォントサイズを指定
+	var area_no;
 	var visit_yn;
 	var Curlat;  //現在地の緯度
         var Curlng;  //現在地の経度
@@ -102,7 +103,7 @@
 		    //localStorage.removeItem('visit_data%3'); //訪問の有無を記憶させるローカルストレージをクリアする
 		    //エリア番号をJSONデータに変化し、ローカルストレージに書き込み　キーは「area_no%」
 		    let json_areano=JSON.stringify(markerList[0].areaid);
-			let area_no=markerList[0].areaid;
+			area_no=markerList[0].areaid;
 		    localStorage.setItem('area_no%',json_areano);	  
 		    //配列markerListをJSONデータに変換し、json_stringという変数に一括代入し、 ローカルストレージに書き込みキーは「all_basic_data」
 		    let json_string=JSON.stringify(markerList);
@@ -110,7 +111,6 @@
 		    localStorage.setItem(key_all,json_string);
 			//「visit_data」というキーでローカルストレージにデータが保存されているか否かを確認する。
 		    var flag=-1;
-			  alert('x' + area_no);
 		    key_visit="visit_data%" + area_no;
 		    for (key in localStorage) {
 					if (localStorage.hasOwnProperty(key)) {
@@ -169,7 +169,7 @@
 		  }).addTo(mymap);
 		  //「kiyaku_data%x」というキーでローカルストレージにデータが保存されているか否かを確認する。
 			var flag_kiyaku=-1;
-				  alert(area_no);
+			alert('y' + area_no);
 		    key_kiyaku="kiyaku_data%" + area_no;
     		  alert(key_kiyaku);
 		    for (key in localStorage) {
@@ -263,6 +263,7 @@
  </script>
   </body>
 </html>
+
 
 
 
