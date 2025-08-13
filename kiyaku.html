@@ -133,7 +133,8 @@
   </p>
   <div class="chkbox"><label id="mylabel"><input id="mycheckbox" type="checkbox" name="chk1" >利用規約に同意する。
   </label></div>
-  <div class="button1"><input id="mybutton"  type="button" value="ホームへ" onclick="clickBtn()" ></div>
+  //<div class="button1"><input id="mybutton"  type="button" value="ホームへ" onclick="clickBtn()" ></div>
+  <button id="mybutton"  type="button" class="button1" value="ホームへ" ></div>
 </body>
 <script>
     if(window.localStorage){
@@ -150,20 +151,21 @@
       alert(flag);
       const checkbox=document.getElementById('mycheckbox')
       if(flag==-1){
-        function clickBtn() {
-          if (checkbox.checked) {
-            alert('ホーム画面に戻ります');
-            //ローカルストレージに書き込み
-            key_kiyaku="kiyaku_data%" + area_no;
-            let kiyaku_yn=1;
-            let json_string=JSON.stringify(kiyaku_yn); 
-            localStorage.setItem(key_kiyaku,json_string);
-            //alert(key_kiyaku);
-            location.href='index.html'
-          }else{
-            alert('「利用規約に同意する。」にチェックが入っていません。');
-          }
-        }
+        // function clickBtn() {
+        document.getElementById('mybutton').addEventListener('click', function() {
+            if (checkbox.checked) {
+                alert('ホーム画面に戻ります');
+                //ローカルストレージに書き込み
+                key_kiyaku="kiyaku_data%" + area_no;
+                let kiyaku_yn=1;
+                let json_string=JSON.stringify(kiyaku_yn); 
+                localStorage.setItem(key_kiyaku,json_string);
+                //alert(key_kiyaku);
+                location.href='index.html'
+             }else{
+                alert('「利用規約に同意する。」にチェックが入っていません。');
+             }
+        });  
       }else{
         //alert("承諾");
         document.getElementById("mycheckbox").style.display = "none";
@@ -174,5 +176,6 @@
 </script>
 
 </html>
+
 
 
