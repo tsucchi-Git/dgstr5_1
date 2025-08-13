@@ -167,11 +167,10 @@
 		      easymap.setView(curpoint);
 		  }).addTo(mymap);
 		  //「kiyaku_data%x」というキーでローカルストレージにデータが保存されているか否かを確認する。
-			 alert('x');
 			var flag_kiyaku=-1;
-			 alert('y');
-		    key_kiyaku="kiyaku_data%" +area_no;
-				  alert(key_kiyaku);
+				  alert(area_no);
+		    key_kiyaku="kiyaku_data%" + area_no;
+    		  alert(key_kiyaku);
 		    for (key in localStorage) {
 					if (localStorage.hasOwnProperty(key)) {
 						alert(key);
@@ -263,6 +262,7 @@
  </script>
   </body>
 </html>
+
 
 
 
