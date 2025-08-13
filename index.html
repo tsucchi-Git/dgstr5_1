@@ -116,6 +116,7 @@
 					if (localStorage.hasOwnProperty(key)) {
 				    if(key==key_visit){
 			      	flag=1;
+					break;
 				  	}
 					}
 		    }
@@ -169,21 +170,19 @@
 		  }).addTo(mymap);
 		  //「kiyaku_data%x」というキーでローカルストレージにデータが保存されているか否かを確認する。
 			var flag_kiyaku=-1;
-			alert('y' + area_no);
 		    key_kiyaku="kiyaku_data%" + area_no;
 		    for (key in localStorage) {
 					if (localStorage.hasOwnProperty(key)) {
 				    if(key==key_kiyaku){
 			      	flag_kiyaku=1;
-					//break;
+					break;
 				  	}
 					}
 		    }
-			alert(flag_kiyaku);
 			//規約に同意していまい場合は、利用規約のページに遷移する。
 			if(flag_kiyaku==-1){
 			 	alert('ご利用に際して、つぎに表示される利用規約をお読みいただき、ページの最後の「利用規約に同意する」にチェックして、「ホームへ」のボタンをタップしてください。');
-			// 	location.href='kiyaku.html';
+			 	location.href='kiyaku.html';
 			}	
 		  //現在地の取得が成功した場合に、その後の処理を行う関数onLocationFoundの呼び出し
 		  mymap.on('locationfound', onLocationFound);
@@ -261,6 +260,7 @@
  </script>
   </body>
 </html>
+
 
 
 
