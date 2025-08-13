@@ -25,7 +25,17 @@
     font-family: Arial;
     font-size:11px    
   }
-
+  .button1{
+    margin-top:20px;
+    text-align: center;
+    font-family: Arial;    
+  }
+  .chkbox{
+    margin-top:20px;
+    text-align: center;
+    font-family: Arial; 
+    border:1px solid #333;
+  } 
 </style>
 <body>
   <p class="headlines">（目的）</p>
@@ -102,10 +112,10 @@
   <p class="contents1">
     この規約は令和７年１０月１４日から施行します。
   </p>
-  <div><label><input id="mycheckbox" type="checkbox" name="chk1" >利用規約
+  <div><label><input id="mycheckbox" class="chkbox" type="checkbox" name="chk1" >利用規約
   に同意する
   </label></div>
-  <div><input id="mybutton" type="button" value="ホームへ" onclick="clickBtn()" ></div>
+  <div><input id="mybutton" class="button1" type="button" value="ホームへ" onclick="clickBtn()" ></div>
 </body>
 <script>
     if(window.localStorage){
@@ -119,7 +129,7 @@
       }else{
         flag=-1
       }
-      alert(flag);
+      //alert(flag);
       const checkbox=document.getElementById('mycheckbox')
       if(flag==-1){
         function clickBtn() {
@@ -130,7 +140,7 @@
             let kiyaku_yn=1;
             let json_string=JSON.stringify(kiyaku_yn); 
             localStorage.setItem(key_kiyaku,json_string);
-            alert(key_kiyaku);
+            //alert(key_kiyaku);
             location.href='index.html'
           }else{
             alert('「利用規約に同意するにチェックが入っていません」');
@@ -145,6 +155,7 @@
 </script>
 
 </html>
+
 
 
 
