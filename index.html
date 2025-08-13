@@ -172,22 +172,22 @@
 		  mymap.on('locationerror', onLocationError);
 	      mymap.locate({setView: true, maxZoom: 18, timeout: 20000});
 		  //「kiyaku_data%x」というキーでローカルストレージにデータが保存されているか否かを確認する。
-		    var flag_kiyaku=-1
-		    key_kiyaku="kiyaku_data%" +area_no;
-		    for (key in localStorage) {
-					if (localStorage.hasOwnProperty(key)) {
-				    if(key==key_kiyaku){
-			      	flag_kiyaku=1
-					break;
-				  	}
-					}
-		    }
-			//alert(flag_kiyaku);
-			//規約に同意していまい場合は、利用規約のページに遷移する。
-			if(flag_kiyaku==-1){
-				alert('ご利用に際して、つぎに表示される利用規約をお読みいただき、ページの最後の「利用規約に同意する」にチェックして、「ホームへ」のボタンをタップしてください。);
-				location.href='kiyaku.html';
-			}	
+		 //    var flag_kiyaku=-1
+		 //    key_kiyaku="kiyaku_data%" +area_no;
+		 //    for (key in localStorage) {
+			// 		if (localStorage.hasOwnProperty(key)) {
+			// 	    if(key==key_kiyaku){
+			//       	flag_kiyaku=1
+			// 		break;
+			// 	  	}
+			// 		}
+		 //    }
+			// //alert(flag_kiyaku);
+			// //規約に同意していまい場合は、利用規約のページに遷移する。
+			// if(flag_kiyaku==-1){
+			// 	alert('ご利用に際して、つぎに表示される利用規約をお読みいただき、ページの最後の「利用規約に同意する」にチェックして、「ホームへ」のボタンをタップしてください。);
+			// 	location.href='kiyaku.html';
+			// }	
 		   //マーカー表示用の関数（マーカーがクリックされたときに、新しいページに遷移
 		  //現在地の取得に成功した場合の処理の関数
 		  function onLocationFound(e) {
@@ -259,6 +259,7 @@
  </script>
   </body>
 </html>
+
 
 
 
