@@ -40,6 +40,7 @@
     </p>
 
     <script>
+		var gps_cycle=0;
         var explain=document.getElementById("title-explain");
         explain.textContent="グリーンリーフの枝先の矢印は、災害伝承碑などの場所を表しています。訪問・チェックインするとオレンジ色に変わります。いずれかをタップすると、災害伝承碑などの写真、名称、住所とともに、現在の場所からの距離が表示されます。一定の距離まで近づくと、チェックイン可能になりデジタルスタンプがゲットできます。ぜひ訪問してみてください。";
            explain.style.fontSize="8pt";       //フォントサイズを指定
@@ -188,6 +189,7 @@
 		  mymap.on('locationfound', onLocationFound);
 		  //現在地の取得が失敗した場合に、その後の処理を行う関数onLocationErrorの呼び出し
 		  mymap.on('locationerror', onLocationError);
+		  //地図に現在地を表示
 	      mymap.locate({setView: true, maxZoom: 18, timeout: 20000});
 		   //マーカー表示用の関数（マーカーがクリックされたときに、新しいページに遷移
 		  //現在地の取得に成功した場合の処理の関数
@@ -207,7 +209,12 @@
 		  function onLocationError(e) {
 		      alert("現在地を取得できませんでした。再度取得してみます。" + e.message);
 		      //ページの再読み込み
-		      location.reload();
+			  gps_cycle=gps_cycle+1;
+			  if(gps_cycle>2){
+				  alert('現在地の情報が取得できません。お使いのスマートフォンの位置情報サービスがオンになっていることをご確認ください。または、位置情報を取得しやすい場所に移動してもう一度お試しください。');
+			  }else{	
+				  location.reload();
+			  }
 		  }
 		  function MarkerShow() {
 		      for (var i = 0; i < markerList.length; i++) {
@@ -260,6 +267,7 @@
  </script>
   </body>
 </html>
+
 
 
 
