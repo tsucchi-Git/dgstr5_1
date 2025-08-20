@@ -104,11 +104,24 @@
       //画像にクリックイベントを付加
       start.addEventListener('click', function(event){
         location.href="home.html";
-      });    
+      });
+      var items = document.querySelectorAll('.faq-question')
+      items.forEach(function (question) {
+        question.addEventListener('click', function () {
+          const answer = this.nextElementSibling;
+  
+          if (answer.style.display === 'block') {
+            answer.style.display = 'none';
+          } else {
+            answer.style.display = 'block';
+          }
+        });
+      });
     //alert('新たなお知らせはありません。');
     //location.href="home.html";
 </script>
 </html>
+
 
 
 
