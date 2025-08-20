@@ -5,14 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>お知らせ-災害伝承碑スランプラリー-</title>
 </head>
+<style>
+  .image_top{
+    width:100%;
+  }
+  .start_button{
+    width:50%;
+    text-align:cente;
+    margin-top:30px;
+    margin-bottom:30px;
+  }
+  .start_button img{
+    animation:anime1 0.5s ease 0s infinite alternate;
+    transform-origin:center;
+  }
+  @keyframes anime1 {
+    form {
+      transform: scale(0.9,0.9);
+  }
+  to {
+      transform: scale(1,1);
+  }
+  }
+        
+</style>
 <body>
+    <div class="image_top">
+      <img src="icon/image_top.png" alt="トップ画像">
+    </div>
+    <div class="rally_start">
+      <img src="icon/rally_start.png" id="start_button" alt="スタ－トボタン">
+    </div>
 
 </body>
 <script>
-    alert('新たなお知らせはありません。');
-    location.href="home.html";
+    //alert('新たなお知らせはありません。');
+    //location.href="home.html";
 </script>
 </html>
+
 
 
 
