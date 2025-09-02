@@ -111,11 +111,11 @@
       //開始日の指定
       //const datestring="2025-09-03";
       const specificDate=new Date('2025-09-02');
-      alert(specificDate);
+      //alert(specificDate);
       //今日の日付をリセット
       const now = new Date();
       const today = now.toLocaleDateString();
-      alert(specificDate + ',' + today);
+      //alert(specificDate + ',' + today);
       //日付の判定処理
       if(today >= specificDate){
             var start=document.getElementById("start_button");
@@ -142,17 +142,18 @@
               });
             });
       } else {
+        //ウェイトボタンを表示にする
+        document.getElementById("wait_button").style.display="block";
         //スタートボタンを非表示にする
         document.getElementById("start_button").style.display="none";
         //お知らせを非表示にする
         document.getElementById("announce").style.display="none";
-        //ウェイトボタンを表示にする
-        document.getElementById("wait_button").style.display="block";
       }        
     //alert('新たなお知らせはありません。');
     //location.href="home.html";
 </script>
 </html>
+
 
 
 
