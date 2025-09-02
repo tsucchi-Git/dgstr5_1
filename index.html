@@ -111,8 +111,8 @@
       //開始日の指定
       const specificDate=new('2025-09-03');
       //今日の日付をリセット
-      const today=new Date();
-      today.setHours(0,0,0,0);
+      const now = new Date();
+      const today = now.toLocaleDateString();
       //日付の判定処理
       if(today >= specificDate){
             var start=document.getElementById("start_button");
@@ -150,6 +150,7 @@
     //location.href="home.html";
 </script>
 </html>
+
 
 
 
