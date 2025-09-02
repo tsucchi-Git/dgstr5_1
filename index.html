@@ -79,9 +79,10 @@
     </p>
     <div class="rally_start">
       <img src="icon/rally_start.png" id="start_button" width="60%" alt="スタ－トボタン">
+      <img src="icon/rally_wait.png" id="wait_button" width="60%" alt="ウェイトボタン">
     </div>
 
-    <div class="faq-container">
+    <div class="faq-container" id="announce">
       <h3>
         <img src="icon/megaphone.png" width=10% >　お知らせ
       </h3>
@@ -107,27 +108,47 @@
    </div>
 </body>
 <script>
-      var start=document.getElementById("start_button");
-      //画像にクリックイベントを付加
-      start.addEventListener('click', function(event){
-        location.href="home.html";
-      });
-      var items = document.querySelectorAll('.faq-question')
-      items.forEach(function (question) {
-        question.addEventListener('click', function () {
-          const answer = this.nextElementSibling;
-  
-          if (answer.style.display === 'block') {
-            answer.style.display = 'none';
-          } else {
-            answer.style.display = 'block';
-          }
-        });
-      });
+      //開始日の指定
+      const specificDate=new('2025-09-01');
+      //今日の日付をリセット
+      const today=new Date();
+      today.setHours(0,0,0,0);
+      //日付の判定処理
+      if(today >= specificDate){
+            var start=document.getElementById("start_button");
+            //スタートボタンを表示にする
+            start.style.display="block";
+            //スタートボタン画像にクリックイベントを付加
+            start.addEventListener('click', function(event){
+              location.href="home.html";
+            });
+            //お知らせを非表示にする
+            document.getElementById("announce").style.display="block"; 
+            var items = document.querySelectorAll('.faq-question')
+            items.forEach(function (question) {
+              question.addEventListener('click', function () {
+                const answer = this.nextElementSibling;
+        
+                if (answer.style.display === 'block') {
+                  answer.style.display = 'none';
+                } else {
+                  answer.style.display = 'block';
+                }
+              });
+            });
+      } else {
+        //スタートボタンを非表示にする
+        document.getElementById("start_button").style.display="none";
+        //お知らせを非表示にする
+        document.getElementById("announce").style.display="none";
+        //ウェイトボタンを表示にする
+        document.getElementById("wait_button").style.display="block";
+      }        
     //alert('新たなお知らせはありません。');
     //location.href="home.html";
 </script>
 </html>
+
 
 
 
