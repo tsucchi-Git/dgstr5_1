@@ -143,18 +143,19 @@
             });
       } else {
         //ウェイトボタンを表示にする
-        document.getElementById("wait_button").style.display="block";
+        var wait_ =document.getElementById("wait_button");
+        wait_.style.display="block";
+        wait_.style.textAlign="center";
         //スタートボタンを非表示にする
         document.getElementById("start_button").style.display="none";
         //お知らせを非表示にする
-        var oshirase=document.getElementById("announce");
-        oshirase.style.display="none";
-        oshirase.style.textAlign="center";
+        document.getElementById("announce").style.display="none";
       }        
     //alert('新たなお知らせはありません。');
     //location.href="home.html";
 </script>
 </html>
+
 
 
 
