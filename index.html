@@ -79,9 +79,10 @@
     </p>
     <div class="rally_start">
       <img src="icon/rally_start.png" id="start_button" width="60%" alt="スタ－トボタン">
+    </div>
+    <div class="rally_start">
       <img src="icon/rally_wait.png" id="wait_button"  width="60%" alt="ウェイトボタン">
     </div>
-
     <div class="faq-container" id="announce">
       <h3>
         <img src="icon/megaphone.png" width=10% >　お知らせ
@@ -143,9 +144,7 @@
             });
       } else {
         //ウェイトボタンを表示にする
-        var wait_ =document.getElementById("wait_button");
-        wait_.style.display="block";
-        wait_.style.textAlign="center";
+       document.getElementById("wait_button").style.display="block";
         //スタートボタンを非表示にする
         document.getElementById("start_button").style.display="none";
         //お知らせを非表示にする
@@ -155,58 +154,3 @@
     //location.href="home.html";
 </script>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
