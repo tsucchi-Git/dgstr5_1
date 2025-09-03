@@ -47,7 +47,7 @@
     font-family:Arial;
   }
 </style>
-<body onCopy="return false;">
+<body>
   <nav>
     <ul>
     <li class=”current”><a href='home.html'>ホーム</a></li>
@@ -180,6 +180,11 @@
   <p class="text-end">※オレンジ色のみかんのスポットは訪問済みです。</p>
 </body>
   <script>
+
+document.body.oncopy = function(event) { 
+  event.preventDefault(); 
+}
+    
       var area_no;
       if(window.localStorage){
           //エリア番号の読み取り
@@ -283,6 +288,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
