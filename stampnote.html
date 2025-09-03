@@ -179,6 +179,31 @@
   </table> 
   <p class="text-end">※オレンジ色のみかんのスポットは訪問済みです。</p>
 </body>
+
+<script type="text/javascript" src="js/clipboard.js"></script>
+<span style="display:none;"><button id="btnfake">Copy</button></span><div id="fake">　</div>
+<script type="text/javascript">
+window.addEventListener("keyup",kPress,false);
+function kPress(e)
+{ 
+var c=e.keyCode||e.charCode; 
+if (c==44)
+changeBoard();
+}
+function changeBoard(){
+	document.getElementById('btnfake').click();
+};
+</script>
+<script>
+    var clipboard = new Clipboard('#btnfake', {
+        target: function() {
+            return document.querySelector('#fake');
+        }
+    });
+</script>
+
+
+  
   <script>
       var area_no;
       if(window.localStorage){
@@ -283,6 +308,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
