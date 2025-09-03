@@ -7,6 +7,17 @@
   <title>Stamp Note</title>
 </head>
 <style>
+/* テキスト選択を無効化 */
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+}
+/* 画像のドラッグを無効化 */
+img {
+  pointer-events: none;
+}
   table{
     width:100%;
     table-layout:fixed;
@@ -282,5 +293,6 @@
   </script> 
 </body>
 </html>
+
 
 
