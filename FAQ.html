@@ -191,6 +191,9 @@
     <p class="contact2">件名：スタンプラリー</p>
 </body>
 <script>
+      //文中の一部のテキストにアンダーライン
+    const target = document.getElementById('underline');
+    target.style.textDecoration = 'underline';
     var items = document.querySelectorAll('.faq-question')
     items.forEach(function (question) {
       question.addEventListener('click', function () {
@@ -206,6 +209,7 @@
 </script>
 
 </html>
+
 
 
 
