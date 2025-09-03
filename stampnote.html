@@ -47,7 +47,7 @@
     font-family:Arial;
   }
 </style>
-<body>
+<body oncopy="return false;>
   <nav>
     <ul>
     <li class=”current”><a href='home.html'>ホーム</a></li>
@@ -180,16 +180,6 @@
   <p class="text-end">※オレンジ色のみかんのスポットは訪問済みです。</p>
 </body>
   <script>
-
-document.addEventListener("keydown", function (e) {
-  if (e.key === "PrintScreen") {
-    alert("スクリーンショットは禁止されています。");
-    e.preventDefault();
-  }
-});
-
-
-	  
       var area_no;
       if(window.localStorage){
           //エリア番号の読み取り
@@ -293,6 +283,7 @@ document.addEventListener("keydown", function (e) {
   </script> 
 </body>
 </html>
+
 
 
 
