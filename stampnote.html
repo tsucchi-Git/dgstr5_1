@@ -179,6 +179,18 @@
   </table> 
   <p class="text-end">※オレンジ色のみかんのスポットは訪問済みです。</p>
   <script>
+// 右クリックを無効化
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+// テキスト選択を無効化
+document.addEventListener('selectstart', (event) => event.preventDefault());
+
+// ドラッグ操作を無効化
+document.addEventListener('dragstart', (event) => event.preventDefault());
+
+
+
+    
       var area_no;
       if(window.localStorage){
           //エリア番号の読み取り
@@ -282,6 +294,7 @@
   </script> 
 </body>
 </html>
+
 
 
 
