@@ -65,6 +65,9 @@
     transform-origin:center;
     margin:auto;
   }
+  .important {
+    color:red;
+  }
   @keyframes anime1 {
     from {
       transform: scale(0.9,0.9);
@@ -87,6 +90,12 @@
         <img src="icon/megaphone.png" width=10% >　お知らせ
       </h3>
       <div class="faq-item">
+        <button class="faq-question">2025.10.14: <span class="important">重要なお知らせ</span></button>
+        <div class="faq-answer" id="important">
+          　この災害伝承碑スタンプラリー～東牟婁・新宮編～は、令和7年〇月〇日～令和8年〇月〇〇日の期間に開催します。所定の数のスタンプを集めた方に、先着〇〇名様限定で記念品を差し上げます。記念品の受け取りは開催期間中とさせていただきます。<br>　なお、記念品の数に限りがあるため、参加者おひとり（スマートフォン１台）あたり、1個に限らせていただきます。<br>　また、記念品をお渡しする際、簡単なアンケートにご協力をお願いします。
+        </div>
+      </div>
+      <div class="faq-item">
         <button class="faq-question">2025.10.14: 開催期間と記念品について</button>
         <div class="faq-answer">
           　この災害伝承碑スタンプラリー～東牟婁・新宮編～は、令和7年〇月〇日～令和8年〇月〇〇日の期間に開催します。所定の数のスタンプを集めた方に、先着〇〇名様限定で記念品を差し上げます。記念品の受け取りは開催期間中とさせていただきます。<br>　なお、記念品の数に限りがあるため、参加者おひとり（スマートフォン１台）あたり、1個に限らせていただきます。<br>　また、記念品をお渡しする際、簡単なアンケートにご協力をお願いします。
@@ -108,6 +117,9 @@
    </div>
 </body>
 <script>
+      //重要な知らせを赤字にする
+      const target=document.getElementById('important');
+      target.style.font="red";
       //開始日の指定
       const specificDate=new Date('2025-09-02');
       //今日の日付取得
@@ -150,6 +162,7 @@
     //location.href="home.html";
 </script>
 </html>
+
 
 
 
