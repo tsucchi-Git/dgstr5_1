@@ -13,7 +13,13 @@
     background-color: #f9f9f9;
   }
   .image_top{
-    text-align:center;
+    text-align: center;
+  }
+  .warning{
+    text-align: center;
+  }
+  button{
+    cursor: pointer; /* カーソル変更 */ 
   }
   .rally_start{
     text-align:center;
@@ -78,9 +84,16 @@
   }
 </style>
 <body>
-    <p class="image_top">
-      <img src="icon/image_top.png" width="100%" alt="トップ画像" >
-    </p>
+    <div>
+      <img src="icon/image_top.png" width="100%"  class="image_top" alt="トップ画像" >
+    </div>
+    <div >
+      <img src="icon/warning.png" width="100%" class="warning" id="warning" alt="iPhoneユーザーへの警告" >
+    </div>
+    <div align="center" id="blowser_button">
+      <button class="button_continue" id="continue_button">それでもこのブラウザで行う</button>
+      <button class="button_stop" id="stop_button">他のブラウザで行う</button>
+    </div>
     <div class="rally_start" style="text-align: center;">
       <img src="icon/rally_start.png" id="start_button" width="60%" alt="スタ－トボタン">
       <img src="icon/rally_wait.png" id="wait_button" width="60%" alt="ウェイトボタン">
@@ -124,13 +137,13 @@
       //重要な知らせを赤字にする
       const target=document.getElementById('important');
       target.style.color="red";
-      //開始日の指定
-      const specificDate=new Date('2025-09-02');
+      //開始の前日の指定
+      const specificDate=new Date('2025-09-08');
       //今日の日付取得
       const today = new Date();
       //alert(specificDate + ',' + today);
       //日付の判定処理
-      if(today >= specificDate){
+      if(today > specificDate){
             var start=document.getElementById("start_button");
             //スタートボタンを表示にする
             start.style.display="block";
@@ -146,7 +159,6 @@
             items.forEach(function (question) {
               question.addEventListener('click', function () {
                 const answer = this.nextElementSibling;
-        
                 if (answer.style.display === 'block') {
                   answer.style.display = 'none';
                 } else {
@@ -154,7 +166,22 @@
                 }
               });
             });
-      } else {
+            //ブラウザの判別→Safariの場合に警告文を出す
+            var agent = window.navigator.userAgent.toLowerCase();
+            if(agent.indexOf('msie') > -1) {
+              browser1();
+            } else if(agent.indexOf('edg') > -1) {
+              browser1();
+            } else if(agent.indexOf('chrome') > -1) {
+              browser2();
+            } else if(agent.indexOf('safari') > -1) {
+              browser2();
+            } else if(agent.indexOf('firefox') > -1) {
+              browser1();
+            } else {
+              browser1();
+            };
+        } else {
         //ウェイトボタンを表示にする
        document.getElementById("wait_button").style.display="block";
         //スタートボタンを非表示にする
@@ -162,8 +189,33 @@
         //お知らせを非表示にする
         document.getElementById("announce").style.display="none";
       }        
-    //alert('新たなお知らせはありません。');
-    //location.href="home.html";
+      //alert('新たなお知らせはありません。');
+    //ブラウザがSafari以外の場合の処理
+    function browser1(){
+        document.getElementById("warning").style.display="none";
+        document.getElementById("blowser_button").style.display="none";
+        document.getElementById("start_button").style.display="block";
+    }
+    //ブラウザがSafariの場合の処理
+    function browser2(){
+        document.getElementById("warning").style.display="block";
+        document.getElementById("blowser_button").style.display="block";
+        document.getElementById("start_button").style.display="none";     
+        var cont_=document.getElementById("continue_button");
+        cont_.addEventListener('click', function(event){
+          document.getElementById("warning").style.display="none";
+          document.getElementById("blowser_button").style.display="none";
+          document.getElementById("start_button").style.display="block";
+        });
+        var stop_=document.getElementById("stop_button");
+        stop_.addEventListener('click', function(event){
+          alert('Google Chromeなど他のブラウザを利用して、本サイトにアクセスしてください。')
+          stop_.style.display="none";
+          document.getElementById("continue_button").style.display="none";
+          window.close();
+        });
+
+    }
 </script>
 </html>
 
